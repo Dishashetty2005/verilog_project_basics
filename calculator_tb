@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 19.06.2025 12:38:26
+// Design Name: 
+// Module Name: calculator_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module calculator_tb;
+reg [3:0]A;
+reg [3:0]B;
+reg op;
+wire [4:0] RESULT;
+calculator uut(A,B,op,RESULT);
+initial begin
+#10 A=4'b0001;B=4'b0000;op=1'b1;
+#10 A=4'b0001;B=4'b0011;op=1'b1;
+#10 A=4'b0011;B=4'b0001;op=1'b0;
+#10;
+$finish;
+end
+endmodule
