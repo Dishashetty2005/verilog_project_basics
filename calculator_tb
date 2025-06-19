@@ -23,13 +23,14 @@
 module calculator_tb;
 reg [3:0]A;
 reg [3:0]B;
-reg op;
-wire [4:0] RESULT;
+reg [1:0]op;
+wire [7:0] RESULT;
 calculator uut(A,B,op,RESULT);
 initial begin
-#10 A=4'b0001;B=4'b0000;op=1'b1;
-#10 A=4'b0001;B=4'b0011;op=1'b1;
-#10 A=4'b0011;B=4'b0001;op=1'b0;
+#10 A=4'b0001;B=4'b0000;op=2'b00;
+#10 A=4'b0001;B=4'b0011;op=2'b00;
+#10 A=4'b0011;B=4'b0001;op=2'b10;
+#10 A=4'b0000;B=4'b0001;op=2'b01;
 #10;
 $finish;
 end
